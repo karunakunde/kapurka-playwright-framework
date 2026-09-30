@@ -19,7 +19,7 @@ export default defineConfig({
 
   workers: process.env.CI ? 4 : undefined,
 
-  reporter: 'html',
+   reporter: [ ['html'], ['allure-playwright']], 
 
   use: {
     baseURL: process.env.BASE_URL,
@@ -27,7 +27,7 @@ export default defineConfig({
     // Take screenshot only when test fails
     screenshot: 'only-on-failure', //screenshot automatically on failure
 
-    trace: 'on',
+    trace: 'on-first-retry',
   },
 
   projects: [
