@@ -11,8 +11,7 @@ export class CurrencyPage extends BasePage_SOLID
         this.currencyDropDow = page.getByRole('combobox',{name:'Select Currency'});
     }
        async isLoaded(): Promise<void> {
-        await expect(this.currencyDropDow).toBeVisible();
-    }
+            await this.currencyDropDow.waitFor({state:'visible'})    }
 
     async goto(): Promise<void>
         {
