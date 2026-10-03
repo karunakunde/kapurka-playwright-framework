@@ -24,5 +24,15 @@ export abstract class BasePage_SOLID {
         await locator.fill(value);
     }
 
+     async selectOption(option:string,locator:Locator)    
+    {
+        await locator.waitFor({state:'visible'})
+        await Promise.all([
+             this.page.waitForLoadState('load'),
+             locator.selectOption({label:option})
+        ]);
+        
+    }
+
     abstract isLoaded():Promise<void>
 }

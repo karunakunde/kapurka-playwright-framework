@@ -24,7 +24,7 @@ export class LoginPage_SOLID extends BasePage_SOLID
     async goto(): Promise<void>
     {
         //await this.navigate('https://www.kapruka.com/shops/customerAccounts/accountLogin.jsp');
-        await this.navigate(`${config.baseUrl}${config.loginPath}`);
+        await this.navigate(config.loginPath);
     }
     async login(email:string, password: string): Promise<void>
     {
